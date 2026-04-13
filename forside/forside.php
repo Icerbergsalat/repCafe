@@ -1,182 +1,53 @@
-<!doctype html>
-<html lang="da">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reparationscafé – Fjernstyret Legetøj</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Velkommen til Repair Café</h1>
+        <p>Vi hjælper dig med at reparere dine ting – gratis og bæredygtigt</p>
+        <a href="index.php?page=events" class="btn">Se kommende events</a>
+    </div>
+</section>
 
-  <header>
-    <a href="#" class="brand" aria-label="Forside">
-      <span class="logo" aria-hidden="true"></span>
-      <span>Reparationscafé</span>
-    </a>
-
-    <nav aria-label="Hovednavigation">
-      <ul>
-        <li><a href="#saadan">Sådan fungerer det</a></li>
-        <li><a href="#aabning">Åbningstider</a></li>
-        <li><a href="#tagmed">Tag med</a></li>
-        <li><a href="#frivillig">Bliv frivillig</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-
-    <aside class="nav-cta" aria-label="Genveje">
-      <a class="btn" href="#tagmed">Tjekliste</a>
-      <a class="btn primary" href="#frivillig">Meld dig</a>
-    </aside>
-  </header>
-
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <article class="hero-text card">
-        <p class="pill">
-          <span class="dot" aria-hidden="true"></span>
-          Lokalt • Frivilligt • Hjælp til selvhjælp
-        </p>
-
-        <h1 id="hero-title">Få fjernstyret legetøj repareret – uden at købe nyt</h1>
-
-        <p class="muted">
-          Vi hjælper med småreparationer på RC-biler og legetøjselektronik.
-          Du deltager selv i reparationen sammen med en frivillig, så du både
-          får hjælp og lærer noget undervejs.
-        </p>
-
-        <p class="actions">
-          <a class="btn primary" href="#saadan">Se hvordan det fungerer</a>
-          <a class="btn" href="#aabning">Find åbningstider</a>
-        </p>
-      </article>
-
-      <aside class="hero-info card" aria-label="Hurtig information">
-        <article class="stat">
-          <h2>Gratis hjælp</h2>
-          <p>Donation er valgfri.</p>
-        </article>
-
-        <article class="stat">
-          <h2>30 min vurdering</h2>
-          <p>Vi starter med hurtig fejlsøgning.</p>
-        </article>
-
-        <article class="stat">
-          <h2>Trygt fællesskab</h2>
-          <p>Børn er velkomne sammen med en voksen.</p>
-        </article>
-      </aside>
-    </section>
-
-    <section id="saadan" aria-labelledby="saadan-title">
-      <h2 id="saadan-title">Sådan fungerer det</h2>
-
-      <section class="grid-3" aria-label="Trin i processen">
-        <article class="card step">
-          <p class="num" aria-label="Trin 1">1</p>
-          <h3>Kom forbi</h3>
-          <p class="muted">Tag legetøjet og eventuelle dele med.</p>
-        </article>
-
-        <article class="card step">
-          <p class="num" aria-label="Trin 2">2</p>
-          <h3>Vurdering</h3>
-          <p class="muted">Vi vurderer om det kan betale sig at reparere.</p>
-        </article>
-
-        <article class="card step">
-          <p class="num" aria-label="Trin 3">3</p>
-          <h3>Reparer sammen</h3>
-          <p class="muted">Du deltager aktivt sammen med en frivillig.</p>
-        </article>
-      </section>
-    </section>
-
-    <section id="aabning" aria-labelledby="aabning-title">
-      <h2 id="aabning-title">Åbningstider</h2>
-
-      <section class="grid-2">
-        <article class="card content">
-          <h3>Næste åbne dage</h3>
-          <ul>
-            <li>Tirsdag 17:00–20:00</li>
-            <li>Lørdag 10:00–13:00</li>
-          </ul>
-        </article>
-
-        <article class="card content">
-          <h3>Forberedelse</h3>
-          <ul>
-            <li>Medbring batterier</li>
-            <li>Medbring fjernbetjening</li>
-            <li>Beskriv fejlen så præcist som muligt</li>
-          </ul>
-        </article>
-      </section>
-    </section>
-
-    <section id="tagmed" aria-labelledby="tagmed-title">
-      <h2 id="tagmed-title">Tag med</h2>
-
-      <section class="grid-3">
-        <article class="card content">
-          <h3>Legetøjet</h3>
-          <p class="muted">RC-bil, drone eller andet fjernstyret legetøj.</p>
-        </article>
-
-        <article class="card content">
-          <h3>Tilbehør</h3>
-          <p class="muted">Fjernbetjening, oplader, batterier og løse dele.</p>
-        </article>
-
-        <article class="card content">
-          <h3>Fejlbeskrivelse</h3>
-          <p class="muted">Forklar hvad der skete, før det gik i stykker.</p>
-        </article>
-      </section>
-    </section>
-
-    <section id="frivillig" aria-labelledby="frivillig-title">
-      <h2 id="frivillig-title">Bliv frivillig</h2>
-
-      <article class="card content">
+<section class="info-section">
+    <article class="info-block">
+        <h2>Hvad er Repair Café?</h2>
         <p>
-          Har du interesse for elektronik, mekanik eller fejlfinding,
-          så kan du være med til at hjælpe andre.
+            Repair Café er et frivilligt fællesskab, hvor mennesker mødes for at reparere ødelagte ting sammen.
+            Det kan være alt fra elektronik og små apparater til tøj og cykler.
         </p>
         <p>
-          <a class="btn primary" href="#">Meld dig som frivillig</a>
+            Formålet er at forlænge levetiden på vores ejendele og samtidig dele viden og erfaringer mellem mennesker.
+            Du behøver ikke være ekspert – alle kan være med og lære noget nyt.
         </p>
-      </article>
-    </section>
+    </article>
+</section>
 
-    <section id="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">FAQ</h2>
+<section class="info-section alt">
+    <article class="info-block">
+        <h2>Bæredygtighed</h2>
+        <p>
+            Ved at reparere i stedet for at smide ud reducerer vi mængden af affald og sparer på jordens ressourcer.
+            Mange ting kan få nyt liv med små reparationer.
+        </p>
+        <p>
+            Repair Café er en del af en større bevægelse mod en mere bæredygtig livsstil,
+            hvor vi tænker mere over vores forbrug og tager ansvar for miljøet.
+        </p>
+    </article>
+</section>
 
-      <article class="card content">
-        <details>
-          <summary>Er det gratis?</summary>
-          <p>Ja, donation er valgfri.</p>
-        </details>
+<section class="info-section">
+    <article class="info-block">
+        <h2>Fællesskab</h2>
+        <p>
+            Repair Café handler ikke kun om reparation - det handler også om mennesker.
+            Her møder du andre med interesse for håndværk, bæredygtighed og samarbejde.
+        </p>
+        <p>
+            Det er et sted hvor man kan få hjælp, hjælpe andre og samtidig være en del af et hyggeligt og lærerigt fællesskab.
+        </p>
+    </article>
+</section>
 
-        <details>
-          <summary>Kan I garantere reparation?</summary>
-          <p>Nej, men vi gør vores bedste for at hjælpe.</p>
-        </details>
-
-        <details>
-          <summary>Skal jeg selv være med?</summary>
-          <p>Ja, konceptet er hjælp til selvhjælp.</p>
-        </details>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <p>test Reparationscafé – Prototype</p>
-  </footer>
-
-</body>
-</html>
+<section class="cta">
+    <h2>Klar til at komme i gang?</h2>
+    <a href="index.php?page=faq" class="btn secondary">Læs FAQ</a>
+</section>
