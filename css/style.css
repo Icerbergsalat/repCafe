@@ -1,16 +1,13 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
-
 
 nav {
     background: #222;
@@ -24,104 +21,272 @@ nav a {
     text-decoration: none;
 }
 
+/* =====================
+   HERO
+   ===================== */
 
-.hero {
+   .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('https://picsum.photos/1200/600');
+                url('https://blog.banggood.com/wp-content/uploads/2024/11/RC-Car-repair.webp');
     background-size: cover;
     background-position: center;
-    color: white;
+    padding: 7rem 2rem;
     text-align: center;
-    padding: 80px 20px;
+    border-bottom: 1px solid #e0dbd3;
 }
 
-.hero h1 {
-    font-size: 28px;
-}
-
-.hero p {
-    margin: 15px 0;
-}
-
-
-.btn {
-    display: inline-block;
-    background: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-.btn.secondary {
-    background: #333;
-}
-
-
-.info {
-    padding: 20px;
-}
-
-.card {
-    background: #f4f4f4;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-}
-
-
-.cta {
-    text-align: center;
-    padding: 40px 20px;
-    background: #eaeaea;
-}
-
-
-@media (min-width: 768px) {
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .info {
-        display: flex;
-        gap: 20px;
-    }
-
-    .card {
-        flex: 1;
-    }
-}
-
-
-@media (min-width: 1024px) {
-    .hero {
-        padding: 120px 20px;
-    }
-
-    .hero h1 {
-        font-size: 50px;
-    }
-}
-
-/* INFO SECTIONS (lodret flow) */
-.info-section {
-    padding: 40px 20px;
-}
-
-.info-section.alt {
-    background: #f4f4f4;
-}
-
-.info-block {
-    max-width: 800px;
+.hero-content {
+    max-width: 640px;
     margin: 0 auto;
 }
 
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+/* =====================
+   BUTTONS
+   ===================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.6rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    background-color: #d97706;
+    color: #fff;
+    border: 2px solid #d97706;
+}
+
+.btn:hover {
+    background-color: #b45309;
+    border-color: #b45309;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: #57534e;
+    border: 2px solid #d6d0c8;
+}
+
+.btn.secondary:hover {
+    border-color: #d97706;
+    color: #d97706;
+    background-color: transparent;
+}
+
+/* =====================
+   INFO SECTIONS
+   ===================== */
+
+.info-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0ece6;
+}
+
+.info-section.alt {
+    background-color: #faf8f5;
+}
+
+.info-block {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .info-block h2 {
-    margin-bottom: 15px;
-    font-size: 24px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1c1917;
+    margin-bottom: 1rem;
 }
 
 .info-block p {
-    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #57534e;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+}
+
+.info-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* =====================
+   CTA
+   ===================== */
+
+.cta {
+    background-color: #1c1917;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.cta .btn.secondary {
+    border-color: #57534e;
+    color: #a8a29e;
+}
+
+.cta .btn.secondary:hover {
+    border-color: #d97706;
+    color: #d97706;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 3rem 1.25rem;
+    }
+
+    .info-section {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .cta {
+        padding: 2.5rem 1.25rem;
+    }
+}
+
+/* =====================
+   PAGE HEADER
+   ===================== */
+
+.page-header {
+    background-color: #1c1917;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #2d2927;
+}
+
+.page-header-content {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.page-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.page-header p {
+    font-size: 1rem;
+    color: #a8a29e;
+}
+
+/* =====================
+   INFO GRID
+   ===================== */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border: 1px solid #e8e2d9;
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+}
+
+.info-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1c1917;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid #d97706;
+    display: inline-block;
+}
+
+/* =====================
+   DETAIL LIST
+   ===================== */
+
+.detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.detail-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.detail-label {
+    color: #78716c;
+}
+
+.detail-value {
+    font-weight: 600;
+    color: #1c1917;
+    text-align: right;
+}
+
+.detail-value a {
+    color: #d97706;
+    text-decoration: none;
+}
+
+.detail-value a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   RESPONSIVE (tilføjelser)
+   ===================== */
+
+@media (max-width: 600px) {
+    .page-header {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-list li {
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .detail-value {
+        text-align: left;
+    }
 }
