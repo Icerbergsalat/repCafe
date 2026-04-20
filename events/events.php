@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Events</h1>
+    <p> Test </p>
 </body>
 </html>

@@ -38,11 +38,11 @@
     <article class="info-block">
         <h2>Fællesskab</h2>
         <p>
-            Repair Café handler ikke kun om reparation - det handler også om mennesker.
-            Her møder du andre med interesse for håndværk, bæredygtighed og samarbejde.
+            Repair Café handler ikke kun om en grønnere fremtid - det handler også om mennesker.
+            Her møder du andre med interesse for håndværk, bæredygtighed, fjernstyret legetøj og samarbejde på tværs af aldersgrupper. Hvorvidt du er en erfaren ekspert.
         </p>
         <p>
-            Det er et sted hvor man kan få hjælp, hjælpe andre og samtidig være en del af et hyggeligt og lærerigt fællesskab.
+            Det er et sted, hvor man kan få hjælp, hjælpe andre og samtidig være en del af et hyggeligt og lærerigt fællesskab.
         </p>
     </article>
 </section>
