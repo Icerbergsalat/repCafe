@@ -9,7 +9,9 @@ body {
     line-height: 1.6;
 }
 
-
+/* =====================
+   NAV
+   ===================== */
 
 nav {
     position: fixed;
@@ -27,9 +29,10 @@ nav a {
     text-decoration: none;
 }
 
-/*
-Footer
-*/
+/* =====================
+   FOOTER
+   ===================== */
+
 footer {
     background-color: #1c1917;
     color: white;
@@ -46,7 +49,7 @@ footer p {
    HERO
    ===================== */
 
-   .hero {
+.hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                 url('https://blog.banggood.com/wp-content/uploads/2024/11/RC-Car-repair.webp');
     background-size: cover;
@@ -87,14 +90,14 @@ footer p {
     font-weight: 600;
     text-decoration: none;
     transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-    background-color: #d97706;
+    background-color: #1f7035;
     color: #fff;
-    border: 2px solid #d97706;
+    border: 2px solid #1f7035;
 }
 
 .btn:hover {
-    background-color: #b45309;
-    border-color: #b45309;
+    background-color: #185a2a;
+    border-color: #185a2a;
 }
 
 .btn.secondary {
@@ -104,8 +107,8 @@ footer p {
 }
 
 .btn.secondary:hover {
-    border-color: #d97706;
-    color: #d97706;
+    border-color: #1f7035;
+    color: #1f7035;
     background-color: transparent;
 }
 
@@ -170,26 +173,8 @@ footer p {
 }
 
 .cta .btn.secondary:hover {
-    border-color: #d97706;
-    color: #d97706;
-}
-
-/* =====================
-   RESPONSIVE
-   ===================== */
-
-@media (max-width: 600px) {
-    .hero {
-        padding: 3rem 1.25rem;
-    }
-
-    .info-section {
-        padding: 2.5rem 1.25rem;
-    }
-
-    .cta {
-        padding: 2.5rem 1.25rem;
-    }
+    border-color: #1f7035;
+    color: #1f7035;
 }
 
 /* =====================
@@ -231,6 +216,8 @@ footer p {
     gap: 1.25rem;
     max-width: 900px;
     margin: 0 auto;
+    list-style: none;
+    padding: 0;
 }
 
 .info-card {
@@ -246,8 +233,15 @@ footer p {
     color: #1c1917;
     margin-bottom: 1rem;
     padding-bottom: 0.6rem;
-    border-bottom: 2px solid #d97706;
+    border-bottom: 2px solid #1f7035;
     display: inline-block;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: #57534e;
+    line-height: 1.65;
+    margin: 0;
 }
 
 /* =====================
@@ -281,61 +275,12 @@ footer p {
 }
 
 .detail-value a {
-    color: #d97706;
+    color: #1f7035;
     text-decoration: none;
 }
 
 .detail-value a:hover {
     text-decoration: underline;
-}
-
-/* =====================
-   RESPONSIVE (tilføjelser)
-   ===================== */
-
-@media (max-width: 600px) {
-    .page-header {
-        padding: 2.5rem 1.25rem;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .detail-list li {
-        flex-direction: column;
-        gap: 0.15rem;
-    }
-
-    .detail-value {
-        text-align: left;
-    }
-}
-
-@media (max-width: 600px) {
-    .page-header {
-        padding: 2.5rem 1.25rem;
-    }
- 
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
- 
-    .detail-list li {
-        flex-direction: column;
-        gap: 0.15rem;
-    }
- 
-    .detail-value {
-        text-align: left;
-    }
-}
- 
-.info-card p {
-    font-size: 0.9rem;
-    color: #57534e;
-    line-height: 1.65;
-    margin: 0;
 }
 
 /* =====================
@@ -366,7 +311,7 @@ footer p {
 .info-card summary::after {
     content: "+";
     float: right;
-    color: #d97706;
+    color: #1f7035;
     font-weight: 700;
 }
 
@@ -380,6 +325,42 @@ footer p {
     line-height: 1.7;
     margin-top: 0.9rem;
 }
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 3rem 1.25rem;
+    }
+
+    .info-section {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .cta {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .page-header {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-list li {
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .detail-value {
+        text-align: left;
+    }
+}
+
 
 /* =====================
    Events

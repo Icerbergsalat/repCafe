@@ -4,12 +4,14 @@
 
 <main>
 
-    <section class="page-header">
-        <div class="page-header-content">
-            <h1>Om Repair Café</h1>
-            <p>Alt du skal vide om os, hvor vi holder til, og hvordan du deltager</p>
-        </div>
+    <header class="page-header" aria-labelledby="page-title">
+
+    <section>
+        <h1 id="page-title">Om Repair Café</h1>
+        <p>Alt du skal vide om os, hvor vi holder til, og hvordan du deltager</p>
     </section>
+
+</header>
 
     <section class="info-section" aria-labelledby="om-heading">
         <article class="info-block">
@@ -26,67 +28,48 @@
     </section>
 
     <section class="info-section alt" aria-labelledby="praktisk-heading">
-        <div class="info-block">
+
+        <header class="info-block">
             <h2 id="praktisk-heading">Praktisk information</h2>
             <p>Her finder du alt det praktiske om vores åbningstider, adresse og kontaktoplysninger.</p>
-        </div>
-        <div class="info-grid">
-            <div class="info-card">
+        </header>
+
+        <section class="info-grid">
+
+            <article class="info-card">
                 <h3>Åbningstider</h3>
                 <ul class="detail-list">
-                    <li>
-                        <span class="detail-label">Hver anden lørdag</span>
-                        <span class="detail-value">Kl. 10:00-15:00</span>
-                    </li>
-                    <li>
-                        <span class="detail-label">Særlige events</span>
-                        <span class="detail-value">Se kalender</span>
-                    </li>
-                    <li>
-                        <span class="detail-label">Entré</span>
-                        <span class="detail-value">Gratis</span>
-                    </li>
+                    <li><span class="detail-label">Hver anden lørdag</span><span class="detail-value">Kl. 10:00-15:00</span></li>
+                    <li><span class="detail-label">Særlige events</span><span class="detail-value">Se kalender</span></li>
+                    <li><span class="detail-label">Entré</span><span class="detail-value">Gratis</span></li>
                 </ul>
-            </div>
-            <div class="info-card">
+            </article>
+
+            <article class="info-card">
                 <h3>Adresse</h3>
                 <ul class="detail-list">
-                    <li>
-                        <span class="detail-label">Lokation</span>
-                        <span class="detail-value">Femøvej 3</span>
-                    </li>
-                    <li>
-                        <span class="detail-label">By</span>
-                        <span class="detail-value">4700 Næstved</span>
-                    </li>
-                    <li>
-                        <span class="detail-label">Indgang</span>
-                        <span class="detail-value">Bagindgangen</span>
-                    </li>
+                    <li><span class="detail-label">Lokation</span><span class="detail-value">Femøvej 3</span></li>
+                    <li><span class="detail-label">By</span><span class="detail-value">4700 Næstved</span></li>
+                    <li><span class="detail-label">Indgang</span><span class="detail-value">Bagindgangen</span></li>
                 </ul>
-            </div>
-            <div class="info-card">
+            </article>
+
+            <article class="info-card">
                 <h3>Kontakt</h3>
                 <ul class="detail-list">
                     <li>
                         <span class="detail-label">E-mail</span>
-                        <span class="detail-value">
-                            <a href="mailto:info@repaircafe.dk">info@repaircafe.dk</a>
-                        </span>
+                        <span class="detail-value"><a href="mailto:info@repaircafe.dk">info@repaircafe.dk</a></span>
                     </li>
                     <li>
                         <span class="detail-label">Telefon</span>
-                        <span class="detail-value">
-                            <a href="tel:+4512345678">+45 12 34 56 78</a>
-                        </span>
+                        <span class="detail-value"><a href="tel:+4512345678">+45 12 34 56 78</a></span>
                     </li>
-                    <li>
-                        <span class="detail-label">Svar inden</span>
-                        <span class="detail-value">2 hverdage</span>
-                    </li>
+                    <li><span class="detail-label">Svar inden</span><span class="detail-value">2 hverdage</span></li>
                 </ul>
-            </div>
-        </div>
+            </article>
+
+        </section>
     </section>
 
     <section class="info-section" aria-labelledby="deltag-heading">
@@ -124,47 +107,81 @@
     </section>
 
     <section class="info-section alt" aria-labelledby="map-heading">
-       
-    <div class="info-block">
-        <h2 id="map-heading">Find os</h2>
-        <p>Her kan du se vores placering på kortet.</p>
-    </div>
 
-    <div class="info-card" style="width: 100%;">
-        <div id="map" style="height: 350px; width: 100%; border-radius: 12px;"></div>
-    </div>
-    <a id="routeBtn" class="btn" target="_blank" rel="noopener">
-        Få rutevejledning
-    </a> 
-</section>
+        <header class="info-block">
+            <h2 id="map-heading">Find os</h2>
+            <p>Her kan du se vores placering på kortet og få rutevejledning.</p>
+        </header>
+
+        <article class="info-card">
+
+            <figure>
+                <figcaption class="sr-only">
+                    Kort over Repair Café lokation
+                </figcaption>
+
+                <div id="map" style="height: 350px; width: 100%; border-radius: 12px;"></div>
+            </figure>
+
+            <footer style="margin-top: 1rem;">
+                <a id="routeBtn" class="btn" target="_blank" rel="noopener">
+                    Få rutevejledning
+                </a>
+            </footer>
+
+        </article>
+
+    </section>
 
 
 <script>
+
+    // Initialize map when page is loaded
 async function initMap() {
+
+    /*
+    *1. Gets address + google maps link from PHP api
+    */ 
     const res = await fetch('api/location.php');
     const data = await res.json();
 
     const address = data.address;
 
+    /*
+    * 2. Puts google maps route link on the button
+    */
+
     const routeBtn = document.getElementById("routeBtn");
     routeBtn.href = data.google_maps_url;
 
+    /*
+    * 3. geocoding, converts address to actual coordinates through OpenStreetMap nominatim API
+    */
 
     const geoRes = await fetch(
         `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`
     );
 
     const geoData = await geoRes.json();
+    // If no results, stop function
     if (!geoData.length) return;
 
+
+    // Gets latitude and longitude
     const lat = geoData[0].lat;
     const lon = geoData[0].lon;
 
+    // Creates Leaflet map og centers it on coordinates
     const map = L.map('map').setView([lat, lon], 15);
+
+    // Adds OpenStreetMap tile layer
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap'
     }).addTo(map);
+
+
+    // Adds marker on address and popup with the address
 
     L.marker([lat, lon])
         .addTo(map)
@@ -172,6 +189,7 @@ async function initMap() {
         .openPopup();
 }
 
-document.addEventListener("DOMContentLoaded", initMap);
+    //Runs initMap when all DOM is loadet
+    document.addEventListener("DOMContentLoaded", initMap);
 </script>
 </main>

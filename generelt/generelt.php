@@ -4,11 +4,11 @@
 
 <main>
 
-    <section class="page-header">
-        <div class="page-header-content">
-            <h1>Generelt om projektet</h1>
+    <section class="page-header" aria-labelledby="page-heading">
+        <header class="page-header-content">
+            <h1 id="page-heading">Generelt om projektet</h1>
             <p>Baggrund, vision og formålet med RC Repair Café</p>
-        </div>
+        </header>
     </section>
 
     <section class="info-section" aria-labelledby="baggrund-heading">
@@ -56,24 +56,24 @@
     </section>
 
     <section class="info-section alt" aria-labelledby="vaerdier-heading">
-        <div class="info-block">
+        <header class="info-block">
             <h2 id="vaerdier-heading">Vores værdier</h2>
             <p>Alt vi gør er bygget på tre grundlæggende værdier.</p>
-        </div>
-        <div class="info-grid">
-            <div class="info-card">
+        </header>
+        <ul class="info-grid">
+            <li class="info-card">
                 <h3>Fællesskab</h3>
                 <p>Vi tror på, at vi lærer bedst og hygger os mest når vi gør ting sammen. RC-hobbyen er sjovere i fællesskab.</p>
-            </div>
-            <div class="info-card">
+            </li>
+            <li class="info-card">
                 <h3>Bæredygtighed</h3>
                 <p>Reparer frem for at smide ud. Vi vil gøre det nemt og tilgængeligt at forlænge levetiden på sit udstyr.</p>
-            </div>
-            <div class="info-card">
+            </li>
+            <li class="info-card">
                 <h3>Videndeling</h3>
                 <p>Vores frivillige hjælpere deler gerne ud af deres viden. Her lærer du noget – vi gør det ikke bare for dig.</p>
-            </div>
-        </div>
+            </li>
+        </ul>
     </section>
 
     <section class="info-section" aria-labelledby="bidrag-heading">
