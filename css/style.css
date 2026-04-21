@@ -364,3 +364,14 @@ main {
         text-align: left;
     }
 }
+
+
+/* =====================
+   Events
+   ===================== */
+.info-card p {
+    font-size: 0.9rem;
+    color: #57534e;
+    line-height: 1.65;
+    margin-top: 1rem;
+}
