@@ -124,6 +124,7 @@
     </section>
 
     <section class="info-section alt" aria-labelledby="map-heading">
+       
     <div class="info-block">
         <h2 id="map-heading">Find os</h2>
         <p>Her kan du se vores placering på kortet.</p>
@@ -132,6 +133,9 @@
     <div class="info-card" style="width: 100%;">
         <div id="map" style="height: 350px; width: 100%; border-radius: 12px;"></div>
     </div>
+    <a id="routeBtn" class="btn" target="_blank" rel="noopener">
+        Få rutevejledning
+    </a> 
 </section>
 
 
@@ -142,12 +146,15 @@ async function initMap() {
 
     const address = data.address;
 
+    const routeBtn = document.getElementById("routeBtn");
+    routeBtn.href = data.google_maps_url;
+
+
     const geoRes = await fetch(
         `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`
     );
 
     const geoData = await geoRes.json();
-
     if (!geoData.length) return;
 
     const lat = geoData[0].lat;
