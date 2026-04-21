@@ -87,14 +87,14 @@ footer p {
     font-weight: 600;
     text-decoration: none;
     transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-    background-color: #d97706;
+    background-color: #1f7035;
     color: #fff;
-    border: 2px solid #d97706;
+    border: 2px solid #1f7035;
 }
 
 .btn:hover {
-    background-color: #b45309;
-    border-color: #b45309;
+    background-color: #1f7035;
+    border-color: #1f7035;
 }
 
 .btn.secondary {
@@ -104,8 +104,8 @@ footer p {
 }
 
 .btn.secondary:hover {
-    border-color: #d97706;
-    color: #d97706;
+    border-color: #1f7035;
+    color: #1f7035;
     background-color: transparent;
 }
 
@@ -246,7 +246,7 @@ footer p {
     color: #1c1917;
     margin-bottom: 1rem;
     padding-bottom: 0.6rem;
-    border-bottom: 2px solid #d97706;
+    border-bottom: 2px solid #1f7035;
     display: inline-block;
 }
 
@@ -281,7 +281,7 @@ footer p {
 }
 
 .detail-value a {
-    color: #d97706;
+    color: #1f7035;
     text-decoration: none;
 }
 
@@ -366,7 +366,7 @@ footer p {
 .info-card summary::after {
     content: "+";
     float: right;
-    color: #d97706;
+    color: #1f7035;
     font-weight: 700;
 }
 
