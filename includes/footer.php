@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div
+    <footer>
+        <p>&copy; 2026 Repair Café Roskilde</p>
+    </footer>
 </body>
 </html>
