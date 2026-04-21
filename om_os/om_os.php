@@ -140,31 +140,53 @@
 
 
 <script>
+
+    // Initialize map when page is loaded
 async function initMap() {
+
+    /*
+    *1. Gets address + google maps link from PHP api
+    */ 
     const res = await fetch('api/location.php');
     const data = await res.json();
 
     const address = data.address;
 
+    /*
+    * 2. Puts google maps route link on the button
+    */
+
     const routeBtn = document.getElementById("routeBtn");
     routeBtn.href = data.google_maps_url;
 
+    /*
+    * 3. geocoding, converts address to actual coordinates through OpenStreetMap nominatim API
+    */
 
     const geoRes = await fetch(
         `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`
     );
 
     const geoData = await geoRes.json();
+    // If no results, stop function
     if (!geoData.length) return;
 
+
+    // Gets latitude and longitude
     const lat = geoData[0].lat;
     const lon = geoData[0].lon;
 
+    // Creates Leaflet map og centers it on coordinates
     const map = L.map('map').setView([lat, lon], 15);
+
+    // Adds OpenStreetMap tile layer
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap'
     }).addTo(map);
+
+
+    // Adds marker on address and popup with the address
 
     L.marker([lat, lon])
         .addTo(map)
@@ -172,6 +194,7 @@ async function initMap() {
         .openPopup();
 }
 
-document.addEventListener("DOMContentLoaded", initMap);
+    //Runs initMap when all DOM is loadet
+    document.addEventListener("DOMContentLoaded", initMap);
 </script>
 </main>
