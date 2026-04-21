@@ -45,6 +45,10 @@ footer p {
     font-size: 0.9rem;
 }
 
+main {
+    padding-top: 40px;
+}
+
 /* =====================
    HERO
    ===================== */

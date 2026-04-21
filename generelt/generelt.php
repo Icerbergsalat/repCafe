@@ -16,7 +16,7 @@
             <h2 id="baggrund-heading">Baggrund</h2>
             <p>
                 RC Repair Café opstod ud af en simpel observation: mange RC-entusiaster har udstyr liggende
-                der ikke virker, men som de ikke ved hvordan de skal reparere – eller ikke har ressourcerne
+                der ikke virker, men som de ikke ved hvordan de skal reparere - eller ikke har ressourcerne
                 til at få professionelt hjulpet.
             </p>
             <p>
@@ -71,7 +71,7 @@
             </li>
             <li class="info-card">
                 <h3>Videndeling</h3>
-                <p>Vores frivillige hjælpere deler gerne ud af deres viden. Her lærer du noget – vi gør det ikke bare for dig.</p>
+                <p>Vores frivillige hjælpere deler gerne ud af deres viden. Her lærer du noget - vi gør det ikke bare for dig.</p>
             </li>
         </ul>
     </section>

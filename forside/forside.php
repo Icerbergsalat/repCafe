@@ -7,7 +7,7 @@
     <section class="hero" aria-labelledby="hero-heading">
         <header class="hero-content">
             <h1 id="hero-heading">Velkommen til Repair Café</h1>
-            <p>Vi hjælper dig med at reparere dine ting – gratis og bæredygtigt</p>
+            <p>Vi hjælper dig med at reparere dine ting - gratis og bæredygtigt</p>
             <a href="index.php?page=events" class="btn">Se kommende events</a>
         </header>
     </section>
@@ -21,7 +21,7 @@
             </p>
             <p>
                 Formålet er at forlænge levetiden på vores ejendele og samtidig dele viden og erfaringer mellem mennesker.
-                Du behøver ikke være ekspert – alle kan være med og lære noget nyt.
+                Du behøver ikke være ekspert - alle kan være med og lære noget nyt.
             </p>
         </article>
     </section>
