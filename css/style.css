@@ -9,7 +9,9 @@ body {
     line-height: 1.6;
 }
 
-
+/* =====================
+   NAV
+   ===================== */
 
 nav {
     position: fixed;
@@ -27,9 +29,10 @@ nav a {
     text-decoration: none;
 }
 
-/*
-Footer
-*/
+/* =====================
+   FOOTER
+   ===================== */
+
 footer {
     background-color: #1c1917;
     color: white;
@@ -46,7 +49,7 @@ footer p {
    HERO
    ===================== */
 
-   .hero {
+.hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                 url('https://blog.banggood.com/wp-content/uploads/2024/11/RC-Car-repair.webp');
     background-size: cover;
@@ -93,8 +96,8 @@ footer p {
 }
 
 .btn:hover {
-    background-color: #1f7035;
-    border-color: #1f7035;
+    background-color: #185a2a;
+    border-color: #185a2a;
 }
 
 .btn.secondary {
@@ -170,26 +173,8 @@ footer p {
 }
 
 .cta .btn.secondary:hover {
-    border-color: #d97706;
-    color: #d97706;
-}
-
-/* =====================
-   RESPONSIVE
-   ===================== */
-
-@media (max-width: 600px) {
-    .hero {
-        padding: 3rem 1.25rem;
-    }
-
-    .info-section {
-        padding: 2.5rem 1.25rem;
-    }
-
-    .cta {
-        padding: 2.5rem 1.25rem;
-    }
+    border-color: #1f7035;
+    color: #1f7035;
 }
 
 /* =====================
@@ -231,6 +216,8 @@ footer p {
     gap: 1.25rem;
     max-width: 900px;
     margin: 0 auto;
+    list-style: none;
+    padding: 0;
 }
 
 .info-card {
@@ -248,6 +235,13 @@ footer p {
     padding-bottom: 0.6rem;
     border-bottom: 2px solid #1f7035;
     display: inline-block;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: #57534e;
+    line-height: 1.65;
+    margin: 0;
 }
 
 /* =====================
@@ -287,55 +281,6 @@ footer p {
 
 .detail-value a:hover {
     text-decoration: underline;
-}
-
-/* =====================
-   RESPONSIVE (tilføjelser)
-   ===================== */
-
-@media (max-width: 600px) {
-    .page-header {
-        padding: 2.5rem 1.25rem;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .detail-list li {
-        flex-direction: column;
-        gap: 0.15rem;
-    }
-
-    .detail-value {
-        text-align: left;
-    }
-}
-
-@media (max-width: 600px) {
-    .page-header {
-        padding: 2.5rem 1.25rem;
-    }
- 
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
- 
-    .detail-list li {
-        flex-direction: column;
-        gap: 0.15rem;
-    }
- 
-    .detail-value {
-        text-align: left;
-    }
-}
- 
-.info-card p {
-    font-size: 0.9rem;
-    color: #57534e;
-    line-height: 1.65;
-    margin: 0;
 }
 
 /* =====================
@@ -379,4 +324,39 @@ footer p {
     color: #57534e;
     line-height: 1.7;
     margin-top: 0.9rem;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 3rem 1.25rem;
+    }
+
+    .info-section {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .cta {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .page-header {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-list li {
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .detail-value {
+        text-align: left;
+    }
 }
