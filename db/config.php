@@ -7,9 +7,9 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 */
 $host = 'localhost';
-$dbname = 'repair_cafe';
+$dbname = 'rep_cafe';
 $username = 'root';
-$password = '';
+$password = 'root';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
@@ -27,40 +27,27 @@ try {
 
 /*
 |--------------------------------------------------------------------------
-| CRUD functions for volunteers
+| Volunteer CRUD
 |--------------------------------------------------------------------------
 */
-
-/**
- * CREATE
- */
-function createVolunteer(PDO $pdo, int $id, string $name, string $email): bool
+function createVolunteer(PDO $pdo, string $name, string $email): bool
 {
-    $sql = "INSERT INTO volunteers (id, name, email)
-            VALUES (:id, :name, :email)";
-
+    $sql = "INSERT INTO volunteers (name, email)
+            VALUES (:name, :email)";
     $stmt = $pdo->prepare($sql);
 
     return $stmt->execute([
-        ':id' => $id,
         ':name' => $name,
-        ':email' => $email,
-
+        ':email' => $email
     ]);
 }
 
-/**
- * READ ALL
- */
 function getAllVolunteers(PDO $pdo): array
 {
-    $sql = "SELECT * FROM volunteers ORDER BY created_at DESC";
+    $sql = "SELECT * FROM volunteers ORDER BY name ASC";
     return $pdo->query($sql)->fetchAll();
 }
 
-/**
- * READ ONE
- */
 function getVolunteerById(PDO $pdo, int $id): array|false
 {
     $sql = "SELECT * FROM volunteers WHERE id = :id";
@@ -70,16 +57,12 @@ function getVolunteerById(PDO $pdo, int $id): array|false
     return $stmt->fetch();
 }
 
-/**
- * UPDATE
- */
 function updateVolunteer(PDO $pdo, int $id, string $name, string $email): bool
 {
-    $sql = "UPDATE volunteers 
+    $sql = "UPDATE volunteers
             SET name = :name,
                 email = :email
             WHERE id = :id";
-
     $stmt = $pdo->prepare($sql);
 
     return $stmt->execute([
@@ -89,43 +72,40 @@ function updateVolunteer(PDO $pdo, int $id, string $name, string $email): bool
     ]);
 }
 
-/**
- * DELETE
- */
 function deleteVolunteer(PDO $pdo, int $id): bool
 {
     $sql = "DELETE FROM volunteers WHERE id = :id";
     $stmt = $pdo->prepare($sql);
 
-    return $stmt->execute([':id' => $id]);
+    return $stmt->execute([
+        ':id' => $id
+    ]);
 }
-function createEvent(PDO $pdo, int $id, DateTime $date, string $title, string $location): bool
-{
-    $sql = "INSERT INTO events (id, date, title, location)
-            VALUES (:id, :date, :title, :location)";
 
+/*
+|--------------------------------------------------------------------------
+| Event CRUD
+|--------------------------------------------------------------------------
+*/
+function createEvent(PDO $pdo, string $title, DateTime $date, string $location): bool
+{
+    $sql = "INSERT INTO events (title, date, location)
+            VALUES (:title, :date, :location)";
     $stmt = $pdo->prepare($sql);
 
     return $stmt->execute([
-        ':id' => $id,
-        ':date' => $date->format('Y-m-d H:i:s'),
         ':title' => $title,
+        ':date' => $date->format('Y-m-d H:i'),
         ':location' => $location
     ]);
 }
 
-/**
- * READ ALL
- */
 function getAllEvents(PDO $pdo): array
 {
-    $sql = "SELECT * FROM events ORDER BY date DESC";
+    $sql = "SELECT * FROM events ORDER BY date ASC";
     return $pdo->query($sql)->fetchAll();
 }
 
-/**
- * READ ONE
- */
 function getEventById(PDO $pdo, int $id): array|false
 {
     $sql = "SELECT * FROM events WHERE id = :id";
@@ -135,34 +115,106 @@ function getEventById(PDO $pdo, int $id): array|false
     return $stmt->fetch();
 }
 
-/**
- * UPDATE
- */
-function updateEvent(PDO $pdo, int $id, DateTime $date, string $title, string $location): bool
+function updateEvent(PDO $pdo, int $id, string $title, DateTime $date, string $location): bool
 {
-    $sql = "UPDATE events 
-            SET date = :date,
-                title = :title,
+    $sql = "UPDATE events
+            SET title = :title,
+                date = :date,
                 location = :location
             WHERE id = :id";
-
     $stmt = $pdo->prepare($sql);
 
     return $stmt->execute([
         ':id' => $id,
-        ':date' => $date->format('Y-m-d H:i:s'),
         ':title' => $title,
+        ':date' => $date->format('Y-m-d H:i:s'),
         ':location' => $location
     ]);
 }
 
-/**
- * DELETE
- */
 function deleteEvent(PDO $pdo, int $id): bool
 {
     $sql = "DELETE FROM events WHERE id = :id";
     $stmt = $pdo->prepare($sql);
 
-    return $stmt->execute([':id' => $id]);
+    return $stmt->execute([
+        ':id' => $id
+    ]);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Event <-> Volunteer relation
+|--------------------------------------------------------------------------
+*/
+function addVolunteerToEvent(PDO $pdo, int $volunteerId, int $eventId): bool
+{
+    $sql = "INSERT INTO event_volunteers (volunteer_id, event_id)
+            VALUES (:volunteer_id, :event_id)";
+    $stmt = $pdo->prepare($sql);
+
+    return $stmt->execute([
+        ':volunteer_id' => $volunteerId,
+        ':event_id' => $eventId
+    ]);
+}
+
+function removeVolunteerFromEvent(PDO $pdo, int $volunteerId, int $eventId): bool
+{
+    $sql = "DELETE FROM event_volunteers
+            WHERE volunteer_id = :volunteer_id
+              AND event_id = :event_id";
+    $stmt = $pdo->prepare($sql);
+
+    return $stmt->execute([
+        ':volunteer_id' => $volunteerId,
+        ':event_id' => $eventId
+    ]);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Read events with volunteer names
+|--------------------------------------------------------------------------
+*/
+function getAllEventsWithVolunteers(PDO $pdo): array
+{
+    $sql = "
+        SELECT
+            events.id,
+            events.title,
+            events.date,
+            events.location,
+            volunteers.name AS volunteer_name
+        FROM events
+        LEFT JOIN event_volunteers
+            ON events.id = event_volunteers.event_id
+        LEFT JOIN volunteers
+            ON event_volunteers.volunteer_id = volunteers.id
+        ORDER BY events.date ASC, volunteers.name ASC
+    ";
+
+    $rows = $pdo->query($sql)->fetchAll();
+
+    $events = [];
+
+    foreach ($rows as $row) {
+        $eventId = (int)$row['id'];
+
+        if (!isset($events[$eventId])) {
+            $events[$eventId] = [
+                'id' => $eventId,
+                'title' => $row['title'],
+                'date' => $row['date'],
+                'location' => $row['location'],
+                'volunteers' => []
+            ];
+        }
+
+        if (!empty($row['volunteer_name'])) {
+            $events[$eventId]['volunteers'][] = $row['volunteer_name'];
+        }
+    }
+
+    return array_values($events);
 }
