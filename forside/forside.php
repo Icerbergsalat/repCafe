@@ -7,7 +7,7 @@
     <section class="hero" aria-labelledby="hero-heading">
         <header class="hero-content">
             <h1 id="hero-heading">Velkommen til Repair Café</h1>
-            <p>Vi hjælper dig med at reparere dine ting - gratis og bæredygtigt</p>
+            <p>Vi hjælper dig med at reparere dit RC legetøj og småteknik - gratis og bæredygtigt</p>
             <a href="index.php?page=events" class="btn">Se kommende events</a>
         </header>
     </section>
